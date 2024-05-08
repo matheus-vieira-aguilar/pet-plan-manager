@@ -35,15 +35,15 @@ $ npm install
 ## Running the app
 
 ```bash
-# development
-$ npm run start
+# build application
+$ docker-compose build
 
-# watch mode
-$ npm run start:dev
+# start application
+$ docker-compose up
 
-# production mode
-$ npm run start:prod
-```
+
+## Access the swagger docummention:
+$ localhost:3000/docs
 
 ## Test
 
