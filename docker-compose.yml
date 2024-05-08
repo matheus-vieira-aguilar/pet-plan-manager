@@ -1,0 +1,32 @@
+version: '3.5'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: plan-pet-manager
+    environment:
+      - PORT=${PORT}
+    ports:
+      - '$PORT:$PORT'
+    volumes:
+      - ./src:/app/src
+    networks:
+      - node-network
+      
+  mongodb:
+    image: mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - dbdata6:/data/db
+    networks:
+      - node-network
+
+volumes:
+  dbdata6:
+
+networks:
+  node-network:
+    driver: bridge      
